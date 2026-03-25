@@ -8,7 +8,7 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(homeProvider).counter;
+    final int counter = ref.watch(homeProvider);
 
     return Scaffold(
       body: Center(

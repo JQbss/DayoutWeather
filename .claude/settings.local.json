@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(flutter analyze:*)"
+      "Bash(flutter analyze:*)",
+      "Bash(ls -la /Users/jakubkrasucki/dev/dayout_weather/lib/**/*.g.dart)",
+      "Bash(for dir:*)",
+      "Bash(do echo:*)",
+      "Read(//Users/jakubkrasucki/dev/dayout_weather/**)",
+      "Bash(done)"
     ]
   }
 }

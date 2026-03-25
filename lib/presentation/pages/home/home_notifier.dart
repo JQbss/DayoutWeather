@@ -1,16 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'home_state.dart';
+part 'home_notifier.g.dart';
 
-class HomeNotifier extends Notifier<HomeState> {
+@riverpod
+class HomeNotifier extends _$HomeNotifier {
   @override
-  HomeState build() => const HomeState();
+  int build() => 0;
 
-  void increment() {
-    state = state.copyWith(counter: state.counter + 1);
-  }
+  void increment() => state++;
 }
-
-final homeProvider = NotifierProvider<HomeNotifier, HomeState>(
-  HomeNotifier.new,
-);
