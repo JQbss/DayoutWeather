@@ -33,7 +33,7 @@ final class HomeNotifierProvider
   HomeNotifier create() => HomeNotifier();
 }
 
-String _$homeNotifierHash() => r'e9d9e38e15391d17590b3abf8fe1f6658360e755';
+String _$homeNotifierHash() => r'56e5fc710ed310dbeaf383f978d9732a7d058e53';
 
 abstract class _$HomeNotifier extends $AsyncNotifier<WeatherReading> {
   FutureOr<WeatherReading> build();

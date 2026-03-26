@@ -10,4 +10,6 @@ Map<String, dynamic> _$WeatherRequestDtoToJson(WeatherRequestDto instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
+      'current': instance.current,
+      'timezone': instance.timezone,
     };

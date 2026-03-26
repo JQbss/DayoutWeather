@@ -7,7 +7,22 @@ class CurrentWeatherDto {
   @JsonKey(name: 'temperature_2m')
   final double? temperature;
 
-  const CurrentWeatherDto({required this.temperature});
+  @JsonKey(name: 'relative_humidity_2m')
+  final int? relativeHumidity;
 
-  factory CurrentWeatherDto.fromJson(Map<String, dynamic> json) => _$CurrentWeatherDtoFromJson(json);
+  @JsonKey(name: 'wind_speed_10m')
+  final double? windSpeed;
+
+  @JsonKey(name: 'weather_code')
+  final int? weatherCode;
+
+  const CurrentWeatherDto({
+    required this.temperature,
+    required this.relativeHumidity,
+    required this.windSpeed,
+    required this.weatherCode,
+  });
+
+  factory CurrentWeatherDto.fromJson(Map<String, dynamic> json) =>
+      _$CurrentWeatherDtoFromJson(json);
 }

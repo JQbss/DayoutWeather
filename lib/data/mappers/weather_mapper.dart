@@ -7,8 +7,8 @@ class WeatherMapper {
   static WeatherReading fromResponseDto(WeatherResponseDto dto) {
     return WeatherReading(
       temperature: dto.current?.temperature,
-      humidity: null,
-      windSpeed: null,
+      humidity: dto.current?.relativeHumidity?.toDouble(),
+      windSpeed: dto.current?.windSpeed,
       time: null,
     );
   }

@@ -7,4 +7,13 @@ import 'app_localizations.dart';
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
+
+  @override
+  String get errorNetwork => 'No internet connection.';
+
+  @override
+  String get errorServer => 'Server error.';
+
+  @override
+  String get errorUnknown => 'An unexpected error occurred.';
 }

@@ -7,4 +7,13 @@ import 'app_localizations.dart';
 /// The translations for Polish (`pl`).
 class AppLocalizationsPl extends AppLocalizations {
   AppLocalizationsPl([String locale = 'pl']) : super(locale);
+
+  @override
+  String get errorNetwork => 'Brak połączenia z internetem.';
+
+  @override
+  String get errorServer => 'Błąd serwera.';
+
+  @override
+  String get errorUnknown => 'Wystąpił nieoczekiwany błąd.';
 }

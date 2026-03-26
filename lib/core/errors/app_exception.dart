@@ -1,16 +1,16 @@
 sealed class AppException implements Exception {
-  const AppException(this.message);
-  final String message;
+  const AppException();
 }
 
 class NetworkException extends AppException {
-  const NetworkException() : super('No internet connection.');
+  const NetworkException();
 }
 
 class ServerException extends AppException {
-  const ServerException(super.message);
+  final String message;
+  const ServerException(this.message);
 }
 
 class UnknownException extends AppException {
-  const UnknownException() : super('An unexpected error occurred.');
+  const UnknownException();
 }
