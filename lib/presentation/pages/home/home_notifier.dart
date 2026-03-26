@@ -1,16 +1,18 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:dayout_weather/domain/entities/weather_reading.dart';
+import 'package:dayout_weather/domain/usecases/providers.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'home_state.dart';
+part 'home_notifier.g.dart';
 
-class HomeNotifier extends Notifier<HomeState> {
+@riverpod
+class HomeNotifier extends _$HomeNotifier {
   @override
-  HomeState build() => const HomeState();
+  Future<WeatherReading> build() => _fetch();
 
-  void increment() {
-    state = state.copyWith(counter: state.counter + 1);
+  Future<WeatherReading> _fetch() => ref.read(getCurrentWeatherUseCaseProvider)(lat: 52.2297, lon: 21.0122);
+
+  Future<void> refresh() async {
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(_fetch);
   }
 }
-
-final homeProvider = NotifierProvider<HomeNotifier, HomeState>(
-  HomeNotifier.new,
-);

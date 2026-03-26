@@ -1,3 +1,5 @@
+import 'package:dayout_weather/domain/entities/weather_reading.dart';
+import 'package:dayout_weather/presentation/widgets/async_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,18 +10,21 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(homeProvider).counter;
+    final AsyncValue<WeatherReading> state = ref.watch(homeProvider);
 
     return Scaffold(
-      body: Center(
-        child: Text(
-          '$counter',
-          style: Theme.of(context).textTheme.displayLarge,
-        ),
+      body: AsyncBuilder(
+        value: state,
+        data: (weather) => _buildContent(context, weather: weather),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => ref.read(homeProvider.notifier).increment(),
-        child: const Icon(Icons.add),
+    );
+  }
+
+  Widget _buildContent(BuildContext context, {required WeatherReading weather}) {
+    return Center(
+      child: Text(
+        '${weather.temperature?.toStringAsFixed(1) ?? '--'}°C',
+        style: Theme.of(context).textTheme.displayLarge,
       ),
     );
   }

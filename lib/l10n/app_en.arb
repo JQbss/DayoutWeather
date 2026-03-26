@@ -1,0 +1,6 @@
+{
+  "@@locale": "en",
+  "errorNetwork": "No internet connection.",
+  "errorServer": "Server error.",
+  "errorUnknown": "An unexpected error occurred."
+}
