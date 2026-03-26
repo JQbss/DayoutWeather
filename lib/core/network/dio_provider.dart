@@ -10,5 +10,10 @@ final Provider<Dio> openMeteoDioProvider = Provider<Dio>((ref) {
       receiveTimeout: const Duration(seconds: 15),
     ),
   );
+  dio.interceptors.add(LogInterceptor(
+    requestBody: true,
+    responseBody: true,
+    logPrint: (o) => print('[Dio] $o'),
+  ));
   return dio;
 });

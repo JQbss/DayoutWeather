@@ -12,7 +12,8 @@ part of 'home_notifier.dart';
 @ProviderFor(HomeNotifier)
 final homeProvider = HomeNotifierProvider._();
 
-final class HomeNotifierProvider extends $NotifierProvider<HomeNotifier, int> {
+final class HomeNotifierProvider
+    extends $AsyncNotifierProvider<HomeNotifier, WeatherReading> {
   HomeNotifierProvider._()
     : super(
         from: null,
@@ -30,29 +31,21 @@ final class HomeNotifierProvider extends $NotifierProvider<HomeNotifier, int> {
   @$internal
   @override
   HomeNotifier create() => HomeNotifier();
-
-  /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(int value) {
-    return $ProviderOverride(
-      origin: this,
-      providerOverride: $SyncValueProvider<int>(value),
-    );
-  }
 }
 
-String _$homeNotifierHash() => r'1debba289048599f00ee6e02a43128f26554ef78';
+String _$homeNotifierHash() => r'e9d9e38e15391d17590b3abf8fe1f6658360e755';
 
-abstract class _$HomeNotifier extends $Notifier<int> {
-  int build();
+abstract class _$HomeNotifier extends $AsyncNotifier<WeatherReading> {
+  FutureOr<WeatherReading> build();
   @$mustCallSuper
   @override
   void runBuild() {
-    final ref = this.ref as $Ref<int, int>;
+    final ref = this.ref as $Ref<AsyncValue<WeatherReading>, WeatherReading>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<int, int>,
-              int,
+              AnyNotifier<AsyncValue<WeatherReading>, WeatherReading>,
+              AsyncValue<WeatherReading>,
               Object?,
               Object?
             >;
