@@ -1,5 +1,5 @@
 import 'package:dayout_weather/core/errors/app_exception.dart';
-import 'package:dayout_weather/core/extensions/dio_exception_mapper.dart';
+import 'package:dayout_weather/core/extensions/dio_exception_extensions.dart';
 import 'package:dio/dio.dart';
 
 mixin SafeApiCall {
