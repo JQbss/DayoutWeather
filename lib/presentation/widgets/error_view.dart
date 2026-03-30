@@ -1,5 +1,5 @@
 import 'package:dayout_weather/core/errors/app_exception.dart';
-import 'package:dayout_weather/core/extensions/context_l10n.dart';
+import 'package:dayout_weather/core/extensions/context_extensions.dart';
 import 'package:dayout_weather/presentation/extensions/app_exception_l10n.dart';
 import 'package:flutter/material.dart';
 
